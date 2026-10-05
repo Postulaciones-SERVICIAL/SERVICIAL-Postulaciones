@@ -101,85 +101,85 @@ function op(texto,puntos,critico){ return {texto,puntos,critico:!!critico}; }
 
 const GENERALES = [
 {id:"g1",competencia:"responsabilidad",consistencia:"resp",texto:"Terminás tu turno y detectás que quedó una tarea pendiente que corresponde al turno siguiente. ¿Qué hacés?",opciones:[
-  op("Me voy porque ya terminó mi horario.",0,true),
-  op("Le aviso al compañero del siguiente turno y dejo la situación informada.",3),
+  op("Dejo la tarea para el siguiente turno sin avisar nada en particular, es algo que pasa seguido.",0,true),
+  op("Hablo directamente con el compañero que entra, le explico la situación y me aseguro de que la entendió.",3),
   op("Intento resolverla si puedo y, si no, dejo informado lo que queda pendiente.",2),
-  op("Espero que alguien se dé cuenta.",0,true)]},
+  op("Lo anoto en la planilla de novedades, que a veces se revisa al otro día.",1)]},
 {id:"g2",competencia:"integridad",consistencia:"hon",texto:"Un compañero te pide que registres una operación que él olvidó registrar porque ya está terminando su turno. ¿Qué hacés?",opciones:[
-  op("La registro yo mismo/a a nombre de él, para ayudarlo.",0,true),
-  op("Le digo que la registre él antes de irse, o que se lo informe al encargado.",3),
-  op("La registro pero dejo aclarado que corresponde a su turno.",1),
-  op("No digo nada y dejo que se resuelva solo.",0,true)]},
+  op("Se la cargo yo mismo/a a mi usuario, para no atrasarlo, y en algún momento se lo comento.",0,true),
+  op("Lo ayudo a hacerlo rápido antes de que se vaya, explicándole los pasos para que la cargue él mismo.",3),
+  op("Le digo que se quede un par de minutos más y me fijo que la cargue bien.",2),
+  op("Le digo que la cargue al otro día, no hay drama en que quede un día de atraso.",1)]},
 {id:"g3",competencia:"cliente",texto:"Un cliente está molesto porque lleva varios minutos esperando y comienza a reclamarte. ¿Cuál es tu primera reacción?",opciones:[
   op("Le explico con calma la demora y busco resolver su pedido lo antes posible.",3),
   op("Le digo que no es mi culpa y que espere.",0,true),
   op("Lo derivo automáticamente a otro compañero sin escucharlo.",1),
   op("Me pongo a la defensiva y discuto con él.",0,true)]},
 {id:"g4",competencia:"responsabilidad",consistencia:"resp",texto:"Si cometés un error que todavía nadie detectó, ¿qué hacés?",opciones:[
-  op("Lo dejo así, capaz que nadie se da cuenta.",0,true),
+  op("Lo dejo como está; si en algún momento se nota, lo explico sin problema.",0,true),
   op("Aviso enseguida y busco cómo solucionarlo.",3),
-  op("Espero a ver si alguien lo nota antes de decir algo.",0,true),
+  op("Primero trato de entender bien qué pasó, y después decido si hace falta avisar.",1),
   op("Lo corrijo si puedo y comento lo sucedido a quien corresponda.",2)]},
 {id:"g5",competencia:"procedimientos",texto:"Hay mucho apuro y un procedimiento habitual te haría perder unos minutos. ¿Qué hacés?",opciones:[
   op("Sigo el procedimiento igual, aunque implique demorar un poco.",3),
-  op("Me lo salteo porque nadie se va a enterar.",0,true),
+  op("Me lo salteo esta vez, ya que total no debería pasar nada.",0,true),
   op("Lo hago rápido y salteo algunos pasos que me parecen menos importantes.",1),
   op("Consulto al encargado si en esta situación se puede simplificar.",2)]},
 {id:"g6",competencia:"equipo",texto:"Un compañero está sobrecargado y vos ya terminaste tu tarea. Todavía quedan tareas del turno. ¿Qué hacés?",opciones:[
-  op("Sigo con lo mío, no me corresponde ayudar.",0,true),
+  op("Ya terminé lo mío; me quedo cerca por si hace falta algo, pero no ofrezco ayuda directamente.",1),
   op("Le pregunto si necesita una mano y ayudo.",3),
-  op("Ayudo solo si me lo piden expresamente.",1),
-  op("Aviso al encargado que hay sobrecarga.",2)]},
+  op("Aviso al encargado que un compañero está sobrecargado, para que decida cómo repartir.",2),
+  op("Aprovecho que terminé para tomarme un descanso más largo del habitual.",0,true)]},
 {id:"g7",competencia:"criterio",texto:"Recibís una instrucción que te parece que puede estar equivocada. ¿Qué hacés?",opciones:[
-  op("La cumplo igual sin decir nada, no es mi problema.",1),
+  op("La cumplo tal cual me la dieron, para no cuestionar a quien manda.",1),
   op("Consulto antes de actuar, para confirmar si es correcta.",3),
-  op("Hago lo que a mí me parece mejor sin avisar.",0,true),
-  op("No la cumplo y sigo con otra tarea.",0,true)]},
+  op("Sigo la instrucción pero ajusto lo que me parece que está mal, sin comentarlo.",0,true),
+  op("Dejo esa tarea para más tarde y sigo con otras, pensando que ya se va a aclarar solo.",1)]},
 {id:"g8",competencia:"presion",texto:"Tenés varios clientes esperando, poco personal y una tarea urgente que te pidieron. ¿Cómo actuás?",opciones:[
   op("Priorizo según la urgencia real y pido ayuda si hace falta.",3),
-  op("Abandono lo que estaba haciendo sin avisar a nadie.",0,true),
+  op("Dejo lo que estaba haciendo a medias para atender lo urgente, sin avisar a nadie del cambio.",0,true),
   op("Hago todo a la vez, aunque baje la calidad de atención.",1),
-  op("Me quedo con una sola tarea e ignoro el resto.",0,true)]},
+  op("Me enfoco solo en una tarea y dejo que las demás esperen, sin avisar.",0,true)]},
 {id:"g9",competencia:"integridad",consistencia:"hon",texto:"Detectás que una operación realizada anteriormente por vos puede contener un error que afecta la caja. ¿Qué hacés?",opciones:[
   op("Lo informo enseguida aunque el error sea mío.",3),
-  op("No digo nada, quizás nadie lo note.",0,true),
-  op("Espero a ver si me preguntan antes de decir algo.",0,true),
+  op("Reviso si se puede ajustar discretamente antes del cierre, sin hacer mucho ruido.",0,true),
+  op("Primero termino mis tareas del turno, y si da tiempo, lo comento al final.",1),
   op("Lo comento de forma indirecta sin asumirlo del todo.",1)]},
 {id:"g10",competencia:"adaptabilidad",texto:"El encargado cambia de golpe la prioridad de tus tareas a mitad de turno. ¿Cómo reaccionás?",opciones:[
   op("Me adapto al cambio y reorganizo lo que estaba haciendo.",3),
-  op("Me quejo y sigo con lo mío como si nada.",0,true),
+  op("Comento que no me parece el cambio, pero igual sigo haciendo lo que ya tenía planeado.",0,true),
   op("Acepto el cambio pero sin muchas ganas, cumpliendo lo mínimo.",1),
   op("Pregunto el motivo y me adapto una vez que entiendo.",2)]},
 {id:"g11",competencia:"organizacion",texto:"Tenés varias tareas para el turno, sin un orden indicado. ¿Cómo las organizás?",opciones:[
-  op("Empiezo por la primera que se me ocurre.",0),
+  op("Empiezo por la que tengo más a mano en ese momento.",1),
   op("Ordeno según urgencia e impacto en el servicio.",3),
-  op("Hago las que más me gustan primero.",0,true),
+  op("Dejo para el final las tareas que me resultan más tediosas, aunque sean importantes.",0,true),
   op("Pregunto al encargado si tengo dudas del orden.",2)]},
 {id:"g12",competencia:"aprendizaje",texto:"Un compañero te señala un error delante de otros trabajadores. ¿Cómo reaccionás?",opciones:[
-  op("Me lo tomo mal y me pongo a la defensiva.",0,true),
+  op("Me cuesta aceptarlo en el momento, y respondo justificándome.",0,true),
   op("Escucho, corrijo y agradezco el aviso.",3),
-  op("Lo ignoro, aunque tenga razón.",0,true),
+  op("Agradezco el comentario en el momento, pero en la práctica sigo haciéndolo igual que antes.",0,true),
   op("Lo acepto, aunque me incomoda que sea delante de otros.",2)]},
 {id:"g13",competencia:"problemas",texto:"Te das cuenta de que una instrucción que recibiste puede haber sido mal interpretada por vos. ¿Qué hacés?",opciones:[
-  op("Sigo como venía haciendo para no generar lío.",0,true),
+  op("Sigo como estaba, pensando que si hubiera un problema grande ya me habrían avisado.",0,true),
   op("Consulto para confirmar y corrijo si hace falta.",3),
   op("Corrijo por mi cuenta sin avisar a nadie.",1),
-  op("Espero que alguien más lo note.",0,true)]},
+  op("Sigo con otras tareas y dejo esa decisión para más adelante.",1)]},
 {id:"g14",competencia:"cliente",texto:"Un cliente pide algo que no corresponde al procedimiento habitual, pero insiste mucho. ¿Qué hacés?",opciones:[
   op("Le explico el procedimiento con respeto y ofrezco una alternativa posible.",3),
-  op("Hago la excepción para que no siga reclamando.",0,true),
+  op("Hago la excepción esta vez, ya que parece una situación puntual y el cliente insiste mucho.",0,true),
   op("Le digo que no y corto la conversación.",1),
   op("Lo derivo al encargado sin intentar resolverlo primero.",2)]},
 {id:"g15",competencia:"procedimientos",texto:"Un compañero te dice que en su turno anterior no se sigue tal cual un procedimiento porque «se pierde tiempo». ¿Qué hacés?",opciones:[
   op("Sigo el procedimiento como corresponde de todas formas.",3),
-  op("Hago lo mismo que él, si a él no le pasó nada.",0,true),
+  op("Empiezo a saltear algunos pasos yo también, ya que parece que no trae problemas.",0,true),
   op("Lo comento al encargado para que lo revise.",2),
   op("Depende del cliente o la situación, decido en el momento.",1)]},
 {id:"g16",competencia:"equipo",texto:"Tenés un desacuerdo con un compañero sobre cómo hacer una tarea. ¿Qué hacés?",opciones:[
-  op("Discuto hasta imponer mi forma de hacerlo.",0,true),
+  op("Insisto con mi forma, porque estoy bastante seguro de que es la más eficiente.",0,true),
   op("Conversamos y buscamos la mejor manera, o consultamos al encargado.",3),
   op("Hago las cosas a mi manera sin decir nada.",1),
-  op("Evito el tema y dejo la tarea sin terminar.",0,true)]}
+  op("Dejo que decida él, aunque no estoy del todo de acuerdo, para no entrar en conflicto.",1)]}
 ];
 
 const ROLE_QUESTIONS = {
